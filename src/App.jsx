@@ -1,9 +1,27 @@
-import Header from "./components/Header";
+import BarChart from "./components/BarChart.jsx";
+import data from "../data.json";
+import { CategoryScale } from "chart.js";
+import Chart from "chart.js/auto";
+import { useState } from "react";
+
+Chart.register(CategoryScale);
 
 function App() {
+  const [chartData, setChartData] = useState({
+    labels: data.map((data) => data.day),
+    datasets: [
+      {
+        data: data.map((data) => data.amount),
+        backgroundColor: ["#EF4444"],
+        borderWidth: 2,
+        pointhoverbackgroundcolor: ["green"],
+      },
+    ],
+  });
+
   return (
     <>
-      <Header />
+      <BarChart data={chartData} />
     </>
   );
 }

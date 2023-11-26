@@ -1,0 +1,8 @@
+/* index.css or main.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #f1e6d8;
+}

@@ -7,6 +7,8 @@ import { useState } from "react";
 Chart.register(CategoryScale);
 
 function App() {
+  const amounts = data.map((item) => item.amount);
+  const totalAmount = amounts.reduce((acc, curr) => acc + curr, 0);
   const [chartData, setChartData] = useState({
     labels: data.map((data) => data.day),
     datasets: [
@@ -21,7 +23,7 @@ function App() {
 
   return (
     <>
-      <BarChart data={chartData} />
+      <BarChart data={chartData} totalAmount={totalAmount} />
     </>
   );
 }

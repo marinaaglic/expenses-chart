@@ -14,9 +14,20 @@ function App() {
         data: data.map((data) => data.amount),
         backgroundColor: ["#EF4444"],
         borderWidth: 2,
-        pointhoverbackgroundcolor: ["green"],
+        hoverBackgroundColor: ["#ADD8E6"],
       },
     ],
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: (context) => {
+            const label = context.dataset.label || "";
+            const value = context.parsed.y;
+            return `${label}: ${value}`;
+          },
+        },
+      },
+    },
   });
 
   return (

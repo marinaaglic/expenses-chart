@@ -1,6 +1,6 @@
 # Expenses Chart
 
-This simple application is done as an exercise from Frontend Mentor web page.
-Tailwind CSS is used for styling this app.
+This simple page is done as an exercise from Frontend Mentor web page.
+The used technology for building this page is ReactJS and for styling TailwindCSS
 
 Chart.js was used for displaying data from data.json file on the screen.
